@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ConversaoTemperatura {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== Conversor de Temperatura ===");
+        System.out.print("Informe a temperatura em Celsius (ex: 25.0): ");
+
+        while (!sc.hasNextDouble()) {
+            System.out.println("Entrada inválida. Digite um número (ex: 25 ou 25.0).");
+            sc.next();
+            System.out.print("Informe a temperatura em Celsius: ");
+        }
+        double c = sc.nextDouble();
+
+        // Cálculos
+        // Trabalhar com precisão normal de ponto flutuante:
+        double f = (c * 9.0 / 5.0) + 32.0;
+        double k = c + 273.15;
+
+        System.out.println("\n--- Resultado ---");
+        System.out.printf("Temperatura em Celsius: %.2f °C%n", c);
+        System.out.printf("Temperatura em Fahrenheit: %.2f °F%n", f);
+        System.out.printf("Temperatura em Kelvin: %.2f K%n", k);
+
+        sc.close();
+    }
+}
